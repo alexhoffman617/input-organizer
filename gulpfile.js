@@ -47,11 +47,15 @@ gulp.task('scripts', function() {
               depends: {
                   angular: 'angular'
               }
+          },
+          interact: {
+              path: 'bower_components/interact/interact.js',
+              exports: 'interact'
+          },
+          lodash: {
+              path: 'bower_components/lodash/dist/lodash',
+              exports: '_'
           }
-          //lodash: {
-          //    path: 'bower_components/lodash/dist/lodash',
-          //    exports: '_'
-          //},
           //'bootstrap-wizard': {
           //    path: 'bower_components/bootstrap-wizard/jquery.bootstrap.wizard.js',
           //    exports: null,

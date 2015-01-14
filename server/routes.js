@@ -6,6 +6,8 @@ var path = require('path');
 
 var db = require('./database');
 
+var lock = require('./lock');
+
 var key = "yayjscoe";
 
 var basePath = process.env.APP_DIR || ".";
@@ -71,10 +73,10 @@ module.exports = [
         }
     },{
         method: 'GET',
-        path: '/css/angular.blox.css',
+        path: '/css/style.css',
         config: {
             handler: function (request, reply) {
-                reply.file(path.join(basePath, '/bower_components/building-blox.directives/dist/angular.blox.css'));
+                reply.file(path.join(basePath, '/public/style.css'));
             },
             app: {
                 name: 'bootstrap'
@@ -118,12 +120,15 @@ module.exports = [
         path: '/submit',
         config: {
             handler: function (request, reply) {
-                db.get(key, function(err, inputList){
+                lock(key, function() {
+                    db.get(key, function (err, inputList) {
                         inputList = inputList || [];
-                        inputList.push(request.payload.userInput);
+                        var newItem = [request.payload.userInput];
+                        inputList.push(newItem);
                         db.put(key, inputList);
                         reply("Submitted Successfully");
                     });
+                });
 
             },
             app: {
@@ -139,6 +144,17 @@ module.exports = [
                     inputList = inputList || [];
                     reply(inputList);
                 });
+            },
+            app: {
+                name: 'board'
+            }
+        }
+    }, {
+        method: 'GET',
+        path: '/clear',
+        config: {
+            handler: function (request, reply) {
+                db.put(key, [])
             },
             app: {
                 name: 'board'

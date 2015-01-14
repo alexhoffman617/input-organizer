@@ -1,13 +1,14 @@
 
-var angular = window.angular;
+var angular = require('angular');
 require('angular-route');
 require('../controllers/_module_init');
+require('../directives/_module_init');
 
 angular.element(document).ready(function() {
     "use strict";
 	var requires = [
         'inputOrganizer.controllers',
-        'BuildingBlox.Directives',
+        'inputOrganizer.directives',
 		'ngRoute',
 	];
 

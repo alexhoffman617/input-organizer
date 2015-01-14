@@ -51,6 +51,17 @@ module.exports = [
         }
     },{
         method: 'GET',
+        path: '/fonts/glyphicons-halflings-regular.woff',
+        config: {
+            handler: function (request, reply) {
+                reply.file(path.join(basePath, '/bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff'));
+            },
+            app: {
+                name: 'bootstrap'
+            }
+        }
+    },{
+        method: 'GET',
         path: '/css/bootstrap.css',
         config: {
             handler: function (request, reply) {
@@ -104,7 +115,7 @@ module.exports = [
                 name: 'bootstrap'
             }
         }
-    },,{
+    },{
         method: 'GET',
         path: '/js/angular.js',
         config: {
@@ -128,6 +139,21 @@ module.exports = [
                         db.put(key, inputList);
                         reply("Submitted Successfully");
                     });
+                });
+
+            },
+            app: {
+                name: 'bootstrap'
+            }
+        }
+    },{
+        method: 'PUT',
+        path: '/saveInputList',
+        config: {
+            handler: function (request, reply) {
+                lock(key, function() {
+                    db.put(key, request.payload.inputList);
+                    reply("Submitted Successfully");
                 });
 
             },

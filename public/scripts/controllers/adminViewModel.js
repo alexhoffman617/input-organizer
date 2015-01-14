@@ -11,6 +11,9 @@ app.controller('AdminViewModel', ['$scope', '$http', function($scope, $http) {
             $scope.inputList = response.data;
         });
     };
+    $scope.saveInputList = function(){
+        $http.put('/saveInputList', { inputList: $scope.inputList });
+    };
     $scope.refreshData();
 }]);
 

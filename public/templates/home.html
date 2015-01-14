@@ -1,2 +1,6 @@
-<input type="text" ng-model="userInput" />
-<button ng-click="submitInput(userInput)">Submit</button>
+<form role="form" ng-submit="submitInput(userInput)" name="submitInputForm">
+    <textarea class="form-control" type="text" ng-model="userInput" style="resize:none;"></textarea><br/>
+    <div class="row">
+        <button class="btn btn-lg col-lg-offset-5 col-lg-2 col-md-offset-5 col-md-2 col-sm-offset-4 col-sm-4 col-xs-offset-3 col-xs-6" type="submit">Submit</button>
+    </div>
+</form>

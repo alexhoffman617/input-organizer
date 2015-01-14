@@ -1,0 +1,21 @@
+{
+  "name": "input-organizer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "alexhoffman617",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-browserify": "^0.5.1",
+    "hapi": "^6.0.2",
+    "leveldown": "~0.10.0",
+    "levelup": "^0.19.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10"
+  }
+}

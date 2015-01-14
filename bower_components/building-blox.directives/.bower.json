@@ -1,0 +1,46 @@
+{
+  "name": "BuildingBlox.Directives",
+  "version": "0.1.0",
+  "authors": [
+    "thegrtman <kgroat@live.com>"
+  ],
+  "description": "Angular module containing useful directives",
+  "main": "angular.blox.directives.js",
+  "keywords": [
+    "Angular"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "dist/bower_components",
+    "src",
+    "testServer",
+    "gulpfile.js",
+    "Angular_Building_Blox_Logo_SM.png",
+    "package.json",
+    "test"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "interact": "~1.0.25"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.1"
+  },
+  "homepage": "https://github.com/thegrtman/BuildingBlox",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "7a5b9d7c31b6965d5e7700935037312ba831e526"
+  },
+  "_source": "git://github.com/thegrtman/BuildingBlox.git",
+  "_target": "~0.1.0",
+  "_originalSource": "building-blox.directives",
+  "_direct": true
+}
